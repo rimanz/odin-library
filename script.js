@@ -1,4 +1,5 @@
 const library = [];
+const showcase = document.querySelector('.showcase');
 
 function Book(title, author, pages) {
   this.title = title;
@@ -13,3 +14,26 @@ function addToLibrary(title, author, pages) {
   library.push(book);
 }
 
+function displayBooks() {
+  library.forEach(book => {
+    const title = document.createElement('div');
+    title.textContent = book.title;
+    title.classList.add('title');
+
+    const author = document.createElement('div');
+    author.textContent = book.author;
+    author.classList.add('author');
+
+    const pages = document.createElement('div');
+    pages.textContent = `${book.pages} pages`;
+    pages.classList.add('pages');
+
+    const bookElement = document.createElement('div');
+    bookElement.classList.add('book');
+    bookElement.appendChild(title);
+    bookElement.appendChild(author);
+    bookElement.appendChild(pages);
+    showcase.appendChild(bookElement);
+  })
+
+}

@@ -49,6 +49,52 @@ main {
     flex-grow: 1;
 }
 
+/* Style for Showcase and Books */
+.showcase {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+.book {
+    height: 16rem;
+    width: 12rem;
+    text-align: center;
+    opacity: 75%;
+    background-color: aliceblue;
+    border: 1px solid grey;
+    border-radius: 5px;
+    padding: 1rem 0.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 1rem;
+}
+
+.book:hover {
+    background-color: ghostwhite;
+    opacity: 100%;
+}
+
+.book .title {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.book .author {
+    font-size: 1.25rem;
+    font-weight: 500;
+}
+
+.book .pages {
+    color: grey;
+    font-style: italic;
+    justify-self: flex-end;
+}
+
 
 /* Style for Footer */
 footer p {
@@ -57,3 +103,4 @@ footer p {
     font-size: 0.825rem;
     text-align: center;
 }
+
