@@ -37,3 +37,14 @@ function displayBooks() {
   })
 
 }
+
+// Taste Codes:
+library.push(
+  {
+    title: 'Who Cares?',
+    author: 'Hu Nouz',
+    pages: 347,
+  }
+)
+
+displayBooks();
