@@ -1,5 +1,6 @@
 const library = [];
 const showcase = document.querySelector('.showcase');
+const dialog = document.querySelector('dialog');
 
 function Book(title, author, pages) {
   this.title = title;
@@ -48,3 +49,4 @@ library.push(
 )
 
 displayBooks();
+dialog.showModal();
