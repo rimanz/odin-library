@@ -66,7 +66,7 @@ main {
     background-color: aliceblue;
     border: 1px solid grey;
     border-radius: 5px;
-    padding: 2rem 0.5rem;
+    padding: 1.25rem 0.75rem 0.75rem 0.75rem;
     display: flex;
     flex-basis: 12rem;
     flex-direction: column;
@@ -78,7 +78,6 @@ main {
 .book:hover, .add-book:hover {
     background-color: ghostwhite;
     opacity: 100%;
-    cursor: pointer;
 }
 
 .book .title {
@@ -97,6 +96,30 @@ main {
     justify-self: flex-end;
 }
 
+.book button {
+    margin-top: auto;
+    max-height: 2rem;
+    font: inherit;
+    font-weight: 500;
+    background-color: rgba(255, 255, 255, 0.5);
+    color: red;
+    opacity: 0.6;
+    border: 1px solid;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: all 300ms;
+}
+
+.book button:hover,
+.book button:active {
+    background-color: red;
+    color: white;
+}
+
+.book button:active {
+    opacity: 0.75;
+}
+
 .add-book {
     font-family: inherit;
     color: darkgrey;
@@ -107,6 +130,7 @@ main {
     justify-content: center;
     align-items: center;
     order: 2;
+    cursor: pointer;
     transition: all 200ms;
 }
 

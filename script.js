@@ -1,5 +1,5 @@
 // DOM Elements:
-const library = [];
+let library = [];
 const showcase = document.querySelector('.showcase');
 const addBook = document.querySelector('.add-book');
 const dialog = document.querySelector('dialog');
@@ -61,11 +61,18 @@ function displayBook(book) {
   pages.textContent = `${book.pages} pages`;
   pages.classList.add('pages');
 
+  const btnDelete = document.createElement('button');
+  btnDelete.textContent = 'Delete';
+  btnDelete.classList.add('btn-delete');
+  btnDelete.addEventListener('click', deleteBook);
+
   const bookElement = document.createElement('div');
+  bookElement.setAttribute('data-id', book.id);
   bookElement.classList.add('book');
   bookElement.appendChild(title);
   bookElement.appendChild(author);
   bookElement.appendChild(pages);
+  bookElement.appendChild(btnDelete);
   showcase.appendChild(bookElement);
 }
 
@@ -73,12 +80,20 @@ function displayBooks() {
   library.forEach(book => {
     displayBook(book);
   })
+}
 
+function deleteBook(e) {
+  const bookEl = e.target.parentNode;
+  const bookID = bookEl.getAttribute('data-id');
+
+  library = library.filter(book => book.id !== bookID);
+  bookEl.remove();
 }
 
 // Taste Codes:
 library.push(
   {
+    id: 'somerandomid',
     title: 'Who Cares?',
     author: 'Hu Nouz',
     pages: 347,
