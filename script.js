@@ -40,6 +40,11 @@ function Book(title, author, pages) {
   this.pages = pages;
 }
 
+Book.prototype.toggleReadStatus = function() {
+  this.read = !this.read;
+  console.log(this);
+}
+
 function addToLibrary(title, author, pages, read=false) {
   // take params, create a book then store it in the array
   const book = new Book(title, author, pages);
@@ -66,12 +71,18 @@ function displayBook(book) {
   btnDelete.classList.add('btn-delete');
   btnDelete.addEventListener('click', deleteBook);
 
+  const btnStatus = document.createElement('button');
+  btnStatus.textContent = book.read ? 'Unread' : 'Read';
+  btnStatus.classList.add('btn-read-status');
+  btnStatus.addEventListener('click', toggleStatus);
+
   const bookElement = document.createElement('div');
   bookElement.setAttribute('data-id', book.id);
   bookElement.classList.add('book');
   bookElement.appendChild(title);
   bookElement.appendChild(author);
   bookElement.appendChild(pages);
+  bookElement.appendChild(btnStatus);
   bookElement.appendChild(btnDelete);
   showcase.appendChild(bookElement);
 }
@@ -79,6 +90,20 @@ function displayBook(book) {
 function displayBooks() {
   library.forEach(book => {
     displayBook(book);
+  })
+}
+
+function toggleStatus(e) {
+  const bookEl = e.target.parentNode;
+  const bookID = bookEl.getAttribute('data-id');
+
+  library.forEach(book => {
+    console.log(book.id, bookID);
+    if (book.id === bookID) {
+      book.toggleReadStatus();
+      e.target.textContent = book.read ? 'Unread' : 'Read';
+      console.log(book);
+    }
   })
 }
 
@@ -91,13 +116,6 @@ function deleteBook(e) {
 }
 
 // Taste Codes:
-library.push(
-  {
-    id: 'somerandomid',
-    title: 'Who Cares?',
-    author: 'Hu Nouz',
-    pages: 347,
-  }
-)
+addToLibrary('Who Cares?', 'Hu Nouz', 347);
 
 displayBooks();
