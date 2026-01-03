@@ -1,250 +1,252 @@
 /* Common Styles */
-*, *::after, *::before {
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
 
 :root {
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
 .container {
-    max-width: 1200px;
-    width: 90%;
-    height: 100%;
-    display: flex;
-    padding: 1rem;
-    margin: auto;
+  max-width: 1200px;
+  width: 90%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  margin: auto;
 }
-
 
 /* Section Specific Styles */
 body {
-    min-height: 100vh;
-    display: flex;
-    flex-direction:  column;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
-
 
 /* Style for Header */
 header {
-    height: 80px;
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: center;
-    border-bottom: 2px solid silver;
+  height: 80px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  border-bottom: 2px solid silver;
 }
 
 header .brand {
-    font-weight: 500;
-    font-style: oblique;
-    margin-right: auto;
+  font-weight: 500;
+  font-style: oblique;
+  margin-right: auto;
 }
-
 
 /* Style for Main Section */
 main {
-    flex-grow: 1;
+  flex-grow: 1;
 }
 
 /* Style for Showcase and Books */
 .showcase {
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 2rem;
-    padding-top: 2rem;
-    padding-bottom: 2rem;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
 }
 
-.book, .add-book {
-    height: 16rem;
-    text-align: center;
-    opacity: 75%;
-    background-color: aliceblue;
-    border: 1px solid grey;
-    border-radius: 5px;
-    padding: 1.25rem 0.75rem 0.75rem 0.75rem;
-    display: flex;
-    flex-basis: 12rem;
-    flex-direction: column;
-    justify-content: flex-start;
-    gap: 0.5rem;
-    transition: all 100ms;
+.book,
+.add-book {
+  height: 16rem;
+  text-align: center;
+  opacity: 75%;
+  background-color: aliceblue;
+  border: 1px solid grey;
+  border-radius: 5px;
+  padding: 1.25rem 0.75rem 0.75rem 0.75rem;
+  display: flex;
+  flex-basis: 12rem;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 0.5rem;
+  transition: all 100ms;
 }
 
-.book:hover, .add-book:hover {
-    background-color: ghostwhite;
-    opacity: 100%;
+.book:hover,
+.add-book:hover {
+  background-color: ghostwhite;
+  opacity: 100%;
 }
 
 .book .title {
-    font-size: 1.5rem;
-    font-weight: 600;
+  font-size: 1.5rem;
+  font-weight: 600;
 }
 
 .book .author {
-    font-size: 1.25rem;
-    font-weight: 500;
+  font-size: 1.25rem;
+  font-weight: 500;
 }
 
 .book .pages {
-    color: grey;
-    font-style: italic;
-    justify-self: flex-end;
+  color: grey;
+  font-style: italic;
+  justify-self: flex-end;
 }
 
 .book button {
-    max-height: 2rem;
-    font: inherit;
-    font-weight: 500;
-    background-color: rgba(255, 255, 255, 0.5);
-    color: black;
-    opacity: 0.6;
-    border: 1px solid;
-    border-radius: 3px;
-    margin-bottom: 0;
-    cursor: pointer;
-    transition: all 300ms;
+  max-height: 2rem;
+  font: inherit;
+  font-weight: 500;
+  background-color: rgba(255, 255, 255, 0.5);
+  color: black;
+  opacity: 0.6;
+  border: 1px solid;
+  border-radius: 3px;
+  margin-bottom: 0;
+  cursor: pointer;
+  transition: all 300ms;
 }
 
 .book button:hover,
 .book button:active {
-    background-color: royalblue;
-    color: white;
+  background-color: royalblue;
+  color: white;
 }
 
 .btn-read-status {
-    margin-top: auto;
-
+  margin-top: auto;
 }
 
 .book .btn-delete {
-    color: red;
-    border-color: red;
+  color: red;
+  border-color: red;
 }
 
 .book .btn-delete:hover,
 .book .btn-delete:active {
-    background-color: red;
-    color: white;
+  background-color: red;
+  color: white;
 }
 
 .book button:active {
-    opacity: 0.75;
+  opacity: 0.75;
 }
 
 .add-book {
-    font-family: inherit;
-    color: darkgrey;
-    font-size: 4rem;
-    font-weight: 100;
-    padding-bottom: 2rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    order: 2;
-    cursor: pointer;
-    transition: all 200ms;
+  font-family: inherit;
+  color: darkgrey;
+  font-size: 4rem;
+  font-weight: 100;
+  padding-bottom: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  order: 2;
+  cursor: pointer;
+  transition: all 200ms;
 }
 
 .add-book:hover {
-    font-size: 5rem;
+  font-size: 5rem;
 }
-
 
 /* Style for Dialog and Form */
 ::backdrop {
-    background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 dialog {
-    background-color: aliceblue;
-    width: clamp(15rem, 80%, 25rem);
-    padding: 2rem 1.25rem;
-    margin: auto;
-    border: 1px solid;
-    border-radius: 5px;
+  background-color: aliceblue;
+  width: clamp(15rem, 80%, 25rem);
+  padding: 2rem 1.25rem;
+  margin: auto;
+  border: 1px solid;
+  border-radius: 5px;
 }
 
 dialog .btn-close {
-    position: absolute;
-    top: 0;
-    right: 0;
-    font-size: 2rem;
-    font-weight: 100;
-    line-height: 0.9;
-    height: 2rem;
-    width: 2rem;
-    vertical-align: text-top;
-    text-align: center;
-    display: inline-block;
-    border-top-right-radius: inherit;
-    border-bottom-left-radius: 3px;
-    cursor: pointer;
-    transition: all 300ms;
-    opacity: 0.75;
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 2rem;
+  font-weight: 100;
+  line-height: 0.9;
+  height: 2rem;
+  width: 2rem;
+  vertical-align: text-top;
+  text-align: center;
+  display: inline-block;
+  border-top-right-radius: inherit;
+  border-bottom-left-radius: 3px;
+  cursor: pointer;
+  transition: all 300ms;
+  opacity: 0.75;
 }
 
-.btn-close:hover, .btn-close:active {
-    color: white;
-    background-color: red;
-    font-weight: 200;
+.btn-close:hover,
+.btn-close:active {
+  color: white;
+  background-color: red;
+  font-weight: 200;
 }
 
 .btn-close:active {
-    opacity: 1;
+  opacity: 1;
 }
 
 form {
-    display: flex;
-    align-items: center;
-    align-content: center;
-    flex-basis: 100%;
-    flex-wrap: wrap;
-    gap: 0.5rem;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  flex-basis: 100%;
+  flex-wrap: wrap;
+  gap: 0.5rem;
 }
 
 label {
-    font-weight: 400;
+  font-weight: 400;
 }
 
 label::after {
-    content: ":";
+  content: ":";
 }
 
-input, button {
-    flex-basis: 100%;
-    height: 2rem;
-    font: inherit;
-    padding-left: 0.25rem;
-    margin-bottom: 0.75rem;
-    border: 1px solid;
-    border-radius: 3px;
+input,
+button {
+  flex-basis: 100%;
+  height: 2rem;
+  font: inherit;
+  padding-left: 0.25rem;
+  margin-bottom: 0.75rem;
+  border: 1px solid;
+  border-radius: 3px;
 }
 
-input[type='checkbox'] {
-    flex-basis: 1rem;
-    margin-bottom: 0;
-    accent-color: aliceblue;
+input[type="checkbox"] {
+  flex-basis: 1rem;
+  margin-bottom: 0;
+  accent-color: aliceblue;
 }
 
-input[type='checkbox'] + label::after {
-    content: "";
+input[type="checkbox"] + label::after {
+  content: "";
 }
 
 form button {
-    margin-top: 0.75rem;
-    margin-bottom: 0;
+  margin-top: 0.75rem;
+  margin-bottom: 0;
 }
 
 /* Style for Footer */
 footer p {
-    width: 100%;
-    height: 20px;
-    font-size: 0.825rem;
-    text-align: center;
+  width: 100%;
+  height: 20px;
+  font-size: 0.825rem;
+  text-align: center;
 }
-
