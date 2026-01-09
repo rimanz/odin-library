@@ -1,5 +1,5 @@
 // DOM Elements:
-const library = [];
+let library = [];
 const showcase = document.querySelector(".showcase");
 const addBookBtn = document.querySelector(".add-book");
 const dialog = document.querySelector("dialog");
@@ -98,11 +98,9 @@ function toggleStatus(e) {
   const bookID = bookEl.getAttribute("data-id");
 
   library.forEach((book) => {
-    console.log(book.id, bookID);
     if (book.id === bookID) {
       book.toggleReadStatus();
       e.target.textContent = book.read ? "Unread" : "Read";
-      console.log(book);
     }
   });
 }
@@ -110,7 +108,6 @@ function toggleStatus(e) {
 function deleteBook(e) {
   const bookEl = e.target.parentNode;
   const bookID = bookEl.getAttribute("data-id");
-
   library = library.filter((book) => book.id !== bookID);
   bookEl.remove();
 }
