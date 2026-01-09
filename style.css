@@ -13,7 +13,7 @@
 }
 
 .container {
-  max-width: 1200px;
+  max-width: 960px;
   width: 90%;
   height: 100%;
   display: flex;
@@ -27,6 +27,7 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  color: darkslategray;
 }
 
 /* Style for Header */
@@ -36,13 +37,14 @@ header {
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
-  border-bottom: 2px solid silver;
+  box-shadow: 0 2px 5px silver;
 }
 
 header .brand {
-  font-weight: 500;
+  font-weight: 600;
   font-style: oblique;
   margin-right: auto;
+  cursor: default;
 }
 
 /* Style for Main Section */
@@ -50,11 +52,23 @@ main {
   flex-grow: 1;
 }
 
+/* Style for welcome text */
+.welcome {
+  font-size: x-large;
+  font-weight: 200;
+  font-style: italic;
+  text-align: center;
+  line-height: 1.8;
+  opacity: 0.75;
+  padding: 3rem 1rem;
+}
+
 /* Style for Showcase and Books */
 .showcase {
   width: 100%;
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 2rem;
   padding-top: 2rem;
   padding-bottom: 2rem;
@@ -65,22 +79,29 @@ main {
   height: 16rem;
   text-align: center;
   opacity: 75%;
-  background-color: aliceblue;
-  border: 1px solid grey;
+  background-color: antiquewhite;
+  border: 1px solid burlywood;
   border-radius: 5px;
   padding: 1.25rem 0.75rem 0.75rem 0.75rem;
   display: flex;
   flex-basis: 12rem;
   flex-direction: column;
   justify-content: flex-start;
-  gap: 0.5rem;
-  transition: all 100ms;
+  gap: 0.75rem;
+  transition: all 200ms ease;
+  box-shadow: 1px 2px 3px silver;
 }
 
 .book:hover,
 .add-book:hover {
-  background-color: ghostwhite;
+  background-color: bisque;
+  box-shadow: 2px 3px 10px lightgray;
+  transform: scale(1.02);
   opacity: 100%;
+}
+
+.book * {
+  cursor: default;
 }
 
 .book .title {
@@ -91,6 +112,7 @@ main {
 .book .author {
   font-size: 1.25rem;
   font-weight: 500;
+  opacity: 0.8;
 }
 
 .book .pages {
@@ -105,7 +127,7 @@ main {
   font-weight: 500;
   background-color: rgba(255, 255, 255, 0.5);
   color: black;
-  opacity: 0.6;
+  opacity: 0.75;
   border: 1px solid;
   border-radius: 3px;
   margin-bottom: 0;
@@ -115,22 +137,24 @@ main {
 
 .book button:hover,
 .book button:active {
-  background-color: royalblue;
+  background-color: seagreen;
   color: white;
 }
 
-.btn-read-status {
+.book .btn-read-status {
   margin-top: auto;
+  color: darkgreen;
+  border-color: darkgreen;
 }
 
 .book .btn-delete {
-  color: red;
-  border-color: red;
+  color: firebrick;
+  border-color: firebrick;
 }
 
 .book .btn-delete:hover,
 .book .btn-delete:active {
-  background-color: red;
+  background-color: firebrick;
   color: white;
 }
 
@@ -140,7 +164,7 @@ main {
 
 .add-book {
   font-family: inherit;
-  color: darkgrey;
+  color: black;
   font-size: 4rem;
   font-weight: 100;
   padding-bottom: 2rem;
@@ -150,10 +174,21 @@ main {
   order: 2;
   cursor: pointer;
   transition: all 200ms;
+  opacity: 0.5;
 }
 
 .add-book:hover {
+  color: darkgreen;
   font-size: 5rem;
+  opacity: 0.75;
+}
+
+.add-book span::after {
+  content: "Add Book";
+  color: darkslategray;
+  display: block;
+  font-size: 1rem;
+  font-weight: 500;
 }
 
 /* Style for Dialog and Form */
@@ -162,7 +197,8 @@ main {
 }
 
 dialog {
-  background-color: aliceblue;
+  background-color: antiquewhite;
+  color: darkslategrey;
   width: clamp(15rem, 80%, 25rem);
   padding: 2rem 1.25rem;
   margin: auto;
@@ -226,12 +262,29 @@ button {
   margin-bottom: 0.75rem;
   border: 1px solid;
   border-radius: 3px;
+  color: inherit;
+  background-color: bisque;
+  border: 1px solid darkgoldenrod;
+}
+
+input:hover {
+  border: 2px solid goldenrod;
+}
+
+input:focus {
+  border: 1px solid goldenrod;
+  outline: 1px solid goldenrod;
 }
 
 input[type="checkbox"] {
   flex-basis: 1rem;
   margin-bottom: 0;
-  accent-color: aliceblue;
+  accent-color: bisque;
+  border: 1px solid;
+}
+
+input[type="checkbox"]:checked {
+  accent-color: bisque;
 }
 
 input[type="checkbox"] + label::after {
@@ -241,6 +294,20 @@ input[type="checkbox"] + label::after {
 form button {
   margin-top: 0.75rem;
   margin-bottom: 0;
+  background-color: burlywood;
+  color: inherit;
+  font-weight: 500;
+  height: 2rem;
+  opacity: 0.9;
+  border: 1px solid burlywood;
+}
+
+form button:hover {
+  opacity: 0.8;
+}
+
+form button:active {
+  opacity: 1;
 }
 
 /* Style for Footer */
