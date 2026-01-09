@@ -276,6 +276,20 @@ input:focus {
   outline: 1px solid goldenrod;
 }
 
+input:required:invalid {
+  border: 1px solid darkgoldenrod;
+}
+
+input:not(:placeholder-shown):invalid {
+  border: 1px solid red;
+  outline: 1px solid red;
+}
+
+input:valid {
+  border: 1px solid darkgreen;
+  outline: 1px solid darkgreen;
+}
+
 input[type="checkbox"] {
   flex-basis: 1rem;
   margin-bottom: 0;
@@ -300,6 +314,7 @@ form button {
   height: 2rem;
   opacity: 0.9;
   border: 1px solid burlywood;
+  cursor: pointer;
 }
 
 form button:hover {

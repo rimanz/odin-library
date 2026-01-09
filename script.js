@@ -26,11 +26,14 @@ dialogSubmit.addEventListener("click", (e) => {
   const author = document.querySelector("#author");
   const pages = document.querySelector("#pages");
   const read = document.querySelector("#read");
-  addToLibrary(title.value, author.value, pages.value, read.checked);
-  displayBook(library[library.length - 1]);
 
-  [title.value, author.value, pages.value, read.checked] = ["", "", "", ""];
-  dialog.close();
+  if (title.value && author.value && pages.value) {
+    addToLibrary(title.value, author.value, pages.value, read.checked);
+    [title.value, author.value, pages.value, read.checked] = ["", "", "", ""];
+    recreateBooks();
+
+    dialog.close();
+  }
 });
 
 // Constructor & Regular Function Declarations:
@@ -42,15 +45,17 @@ function Book(title, author, pages) {
 
 Book.prototype.toggleReadStatus = function () {
   this.read = !this.read;
-  console.log(this);
 };
 
+// Utility functions:
 function addToLibrary(title, author, pages, read = false) {
   // take params, create a book then store it in the array
-  const book = new Book(title, author, pages);
-  book.id = crypto.randomUUID();
-  book.read = read;
-  library.push(book);
+  if (title && author && pages) {
+    const book = new Book(title, author, pages);
+    book.id = crypto.randomUUID();
+    book.read = read;
+    library.push(book);
+  }
 }
 
 function displayBook(book) {
@@ -93,6 +98,12 @@ function displayBooks() {
   });
 }
 
+function recreateBooks() {
+  showcase.innerHTML = ""; // removes all existing books
+  displayBooks(); // recreates them from the source again
+  showcase.appendChild(addBookBtn);
+}
+
 function toggleStatus(e) {
   const bookEl = e.target.parentNode;
   const bookID = bookEl.getAttribute("data-id");
@@ -113,6 +124,23 @@ function deleteBook(e) {
 }
 
 // Taste Codes:
-addToLibrary("Who Cares?", "Hu Nouz", 347);
+console.log(library);
+
+library = [
+  {
+    title: "Who Cares?",
+    author: "Hu Nouz",
+    pages: 347,
+    id: "15856aa3-ee3d-4247-9355-69eb73422bf0",
+    read: false,
+  },
+  {
+    title: "Who am I?",
+    author: "Bhagavan Sri Ramana Maharshi",
+    pages: 40,
+    id: "49b4fac0-4a9f-4e40-9e1d-484c60f82057",
+    read: true,
+  },
+];
 
 displayBooks();
