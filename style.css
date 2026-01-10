@@ -308,7 +308,8 @@ input[type="checkbox"] {
   flex-basis: 1rem;
   margin-bottom: 0;
   accent-color: bisque;
-  border: 1px solid;
+  border: none;
+  outline: none;
 }
 
 input[type="checkbox"]:checked {
@@ -345,4 +346,5 @@ footer p {
   height: 20px;
   font-size: 0.825rem;
   text-align: center;
+  margin-top: 3rem;
 }

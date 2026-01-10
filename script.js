@@ -122,25 +122,3 @@ function deleteBook(e) {
   library = library.filter((book) => book.id !== bookID);
   bookEl.remove();
 }
-
-// Taste Codes:
-console.log(library);
-
-library = [
-  {
-    title: "Who Cares?",
-    author: "Hu Nouz",
-    pages: 347,
-    id: "15856aa3-ee3d-4247-9355-69eb73422bf0",
-    read: false,
-  },
-  {
-    title: "Who am I?",
-    author: "Bhagavan Sri Ramana Maharshi",
-    pages: 40,
-    id: "49b4fac0-4a9f-4e40-9e1d-484c60f82057",
-    read: true,
-  },
-];
-
-displayBooks();
