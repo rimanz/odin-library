@@ -36,16 +36,18 @@ dialogSubmit.addEventListener("click", (e) => {
   }
 });
 
-// Constructor & Regular Function Declarations:
-function Book(title, author, pages) {
-  this.title = title;
-  this.author = author;
-  this.pages = pages;
-}
+// Object Classes & Regular Function Declarations:
+class Book {
+  constructor(title, author, pages) {
+    this.title = title;
+    this.author = author;
+    this.pages = pages;
+  }
 
-Book.prototype.toggleReadStatus = function () {
-  this.read = !this.read;
-};
+  toggleReadStatus() {
+    this.read = !this.read;
+  }
+}
 
 // Utility functions:
 function addToLibrary(title, author, pages, read = false) {
