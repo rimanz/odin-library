@@ -1,5 +1,9 @@
-// DOM Elements:
-let library = [];
+// Storage Management:
+const localLibrary = localStorage.getItem("library");
+const saveToLocal = (k, v) => localStorage.setItem(k, JSON.stringify(v));
+let library = localLibrary ? JSON.parse(localLibrary) : [];
+
+// DOM Nodes:
 const showcase = document.querySelector(".showcase");
 const addBookBtn = document.querySelector(".add-book");
 const dialog = document.querySelector("dialog");
@@ -57,6 +61,7 @@ function addToLibrary(title, author, pages, read = false) {
     book.id = crypto.randomUUID();
     book.read = read;
     library.push(book);
+    saveToLocal("library", library);
   }
 }
 
@@ -116,6 +121,8 @@ function toggleStatus(e) {
       e.target.textContent = book.read ? "Unread" : "Read";
     }
   });
+
+  saveToLocal("library", library);
 }
 
 function deleteBook(e) {
@@ -123,4 +130,7 @@ function deleteBook(e) {
   const bookID = bookEl.getAttribute("data-id");
   library = library.filter((book) => book.id !== bookID);
   bookEl.remove();
+  saveToLocal("library", library);
 }
+
+displayBooks(); // initiates initial refresh
