@@ -8,8 +8,18 @@
 }
 
 :root {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    "Open Sans",
+    "Helvetica Neue",
+    sans-serif;
 }
 
 .container {
@@ -308,12 +318,32 @@ input[type="checkbox"] {
   flex-basis: 1rem;
   margin-bottom: 0;
   accent-color: bisque;
-  border: none;
-  outline: none;
+  background-color: burlywood;
+  height: 1rem;
+  outline: 1px;
+  border: 1px;
 }
 
-input[type="checkbox"]:checked {
+input[type="checkbox"]::after {
+  content: "";
+  display: block;
+  height: 1rem;
+  width: 1rem;
+  background-color: bisque;
+  border: 1px solid darkgoldenrod;
+  opacity: 0.1;
+}
+
+input[type="checkbox"]:checked,
+input[type="checkbox"]:focus,
+input[type="checkbox"]:focus-visible,
+input[type="checkbox"]:hover {
   accent-color: bisque;
+  cursor: pointer;
+  outline-color: goldenrod;
+  opacity: 1;
+  border: 2px solid goldenrod;
+  outline: 2px;
 }
 
 input[type="checkbox"] + label::after {
